@@ -2,20 +2,18 @@
 
 ![](docs/mickey.jpg)
 
-## wtf
+## What
 
 Figure out the rules and expected number of turns to win the terrible kids'
-game "HiHo!  Cherry-O Mickey Mouse Clubhouse Edition"
+game "HiHo! Cherry-O Mickey Mouse Clubhouse Edition" ([Don't buy.](http://www.amazon.com/Cherry-O-Disney-Mickey-Clubhouse-Edition/dp/B00IFWSO8K))
 
-[Don't buy.](http://www.amazon.com/Cherry-O-Disney-Mickey-Clubhouse-Edition/dp/B00IFWSO8K)
-
-Why? Because the rules supplied are inscrutable, so the only rational path
+Why? Because the rules supplied are inscrutable and the only rational path
 forward is to write a simple simulation to test alternatives.
 
 Said differently, I did this to answer the question **can this game really
 take this long???**
 
-## game
+## The Game
 
 Each player starts with a tree with ten fruits on it.  The object of the game
 is to move all your fruit off your tree and into a picnic area.  You move fruit
@@ -31,6 +29,8 @@ picnic and put them back on their respective trees. Potentially? Or maybe it's
 one fruit each for a total of three. Only God and Hasbro know for sure, though
 I endeavour to find out.
 
+## "Results"
+
 Simple EV (in fruits moving from tree->picnic) of a spin is:
 (1+1+2+2+3+3-3)/7 == 9/7 == 1.285714286 fruit/spin
 
@@ -41,7 +41,7 @@ single player game seems to be around 7.59:
 
     (hhco.core/-main 100000 1) ;7.58982
 
-With three players, you've got more people rolling negatives and prolonging
+With three players, you've got more people spinning negatives and prolonging
 the game. Expect the winner to take ~9.5 spins in this case.
 
     (hhco.core/-main 100000 3) ;9.49713
@@ -55,8 +55,16 @@ tree.  If that's the case, the winner wins in ~6.14 turns:
 
 This is moderately more tolerable.
 
+# Open Questions In The Study Of HiHo! Cherry-O
+
+With a penalty of n, how many players p do you need before the game diverges
+into an endless Sysyphusian hell? (i.e. when does the EV of a spin become
+negative?)
+
+# End Matter
+
 I suspect the math for the exact solution to these questions might be easier
 than I think, but I am terrible at probability and wanted to write a program
-which is guaranteed to be bug free.  If you happen to know how to get the exact
-solution (i.e. without monte carlo methods), let me know!
+which is 100% guaranteed to be bug free.  If you happen to know how to get the
+exact solution (i.e. without monte carlo methods), let me know!
 
