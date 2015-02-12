@@ -18,8 +18,8 @@ take this long???**
 ## game
 
 Each player starts with a tree with ten fruits on it.  The object of the game
-is to move all your fruit to a picnic area.  You move fruit by spinning a wheel
-and moving the prescribed number of fruit.
+is to move all your fruit off your tree and into a picnic area.  You move fruit
+by spinning a wheel and moving the prescribed number of fruit.
 
 The spinner has seven equally likely spots, each dictating how many fruits to
 move from the current player's tree to the picnic. Probably? There are many
@@ -47,16 +47,16 @@ the game. Expect the winner to take ~9.5 spins in this case.
     (hhco.core/-main 100000 3) ;9.49713
 
 This is the number of spins for *the winner*, so for three players we're
-looking at ~28.5 spins, which is an eternity for kids. From this I suspect the
-Pluto rule is really each player puts one fruit back on the tree.  If that's
-the case, the winner wins in ~6.14 turns:
+looking at ~28.5 spins, which might as well be an eternity with kids. From this
+I suspect the Pluto rule is really that each player puts one fruit back on the
+tree.  If that's the case, the winner wins in ~6.14 turns:
 
     (hhco.core/-main 100000 3 -1) ;6.14403
 
 This is moderately more tolerable.
 
 I suspect the math for the exact solution to these questions might be easier
-than I think, but I am terrible at probability and wanted to write a program,
+than I think, but I am terrible at probability and wanted to write a program
 which is guaranteed to be bug free.  If you happen to know how to get the exact
 solution (i.e. without monte carlo methods), let me know!
 
